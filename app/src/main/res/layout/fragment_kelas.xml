@@ -1,0 +1,78 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="info.androidhive.navigationdrawer.fragment.KelasFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_kelas2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/btn_kelas1"
+            android:layout_marginEnd="60dp"
+            android:background="@color/colorPrimary"
+            android:text="KELAS 2"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_kelas3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/btn_kelas1"
+            android:layout_marginTop="216dp"
+            android:background="@color/colorPrimary"
+            android:text="KELAS 3"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_kelas5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/btn_kelas1"
+            android:layout_marginBottom="125dp"
+            android:background="@color/colorPrimary"
+            android:text="KELAS 5"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_kelas4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btn_kelas2"
+            android:layout_alignTop="@+id/btn_kelas3"
+            android:background="@color/colorPrimary"
+            android:text="KELAS 4"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_kelas6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btn_kelas2"
+            android:layout_alignTop="@+id/btn_kelas5"
+            android:background="@color/colorPrimary"
+            android:text="KELAS 6"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_kelas1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="102dp"
+            android:background="@color/colorPrimary"
+            android:text="KELAS 1"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+</FrameLayout>
