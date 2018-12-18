@@ -11,15 +11,44 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.login.LoginActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.register.RegisterActivity"
+            android:label="Register"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".activity.home.HomeActivity"
+            android:label="Home"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".activity.kelas.KelasActivity"
+            android:label="Kelas"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".activity.siswa.SiswaActivity"
+            android:label="Siswa"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".activity.absensi.AbsensiActivity"
+            android:label="Absensi"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".activity.laporan.LaporanActivity"
+            android:label="Laporan Absensi"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

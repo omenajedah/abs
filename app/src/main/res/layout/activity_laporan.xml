@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="info.androidhive.navigationdrawer.activity.laporan.LaporanViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/label_jumlah_hari_absen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="JUMLAH HARI ABSEN"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/jumlah_hari_absen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/jumlah_hari_absen" />
+
+        <TextView
+            android:id="@+id/jumlah_hari_absen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_field_laporan"
+            android:ems="3"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="5"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/label_jumlah_hari_absen"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label_jumlah_hari_perbulan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="JUMLAH HARI PER BULAN"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/jumlah_hari_perbulan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/jumlah_hari_perbulan"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/jumlah_hari_perbulan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_field_laporan"
+            android:ems="3"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="25"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@+id/jumlah_hari_absen"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/label_jumlah_hari_absen"
+            app:layout_constraintTop_toBottomOf="@+id/jumlah_hari_absen" />
+
+        <TextView
+            android:id="@+id/label_jumlah_absen_siswa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="JUMLAH ABSEN SISWA"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/jumlah_absen_siswa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/jumlah_absen_siswa"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/jumlah_absen_siswa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_field_laporan"
+            android:ems="3"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="3"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@+id/jumlah_hari_perbulan"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/label_jumlah_hari_absen"
+            app:layout_constraintTop_toBottomOf="@+id/jumlah_hari_perbulan" />
+
+        <TextView
+            android:id="@+id/label_jumlah_siswa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="JUMLAH SISWA"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/jumlah_siswa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/jumlah_siswa"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/jumlah_siswa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_field_laporan"
+            android:ems="3"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="30"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@+id/jumlah_absen_siswa"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/label_jumlah_hari_absen"
+            app:layout_constraintTop_toBottomOf="@+id/jumlah_absen_siswa" />
+
+        <TextView
+            android:id="@+id/label_persentase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="PERSENTASE KEHADIRAN"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/persentase"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/persentase"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/persentase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_field_laporan"
+            android:ems="3"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="5"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@+id/jumlah_siswa"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/label_jumlah_hari_absen"
+            app:layout_constraintTop_toBottomOf="@+id/jumlah_siswa" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="info.androidhive.navigationdrawer.other.Utils"/>
+        <variable
+            name="vm"
+            type="info.androidhive.navigationdrawer.activity.siswa.ListSiswaViewModel" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?selectableItemBackground">
+
+        <TextView
+            android:id="@+id/kelas_siswa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{Utils.fromHTML(String.format(@string/nama_siswa, vm.siswa.kelas.nama_kelas))}"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Kelas 1" />
+
+        <TextView
+            android:id="@+id/nama_siswa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{Utils.fromHTML(String.format(@string/nama_siswa, vm.siswa.nama_siswa))}"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/kelas_siswa"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/kelas_siswa"
+            app:layout_constraintTop_toBottomOf="@+id/kelas_siswa"
+            tools:text="Nama Siswa" />
+
+        <TextView
+            android:id="@+id/nisn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{Utils.fromHTML(String.format(@string/nisn, vm.siswa.nisn))}"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/nama_siswa"
+            app:layout_constraintStart_toStartOf="@+id/nama_siswa"
+            app:layout_constraintTop_toBottomOf="@+id/nama_siswa"
+            tools:text="Nisn 192131230" />
+
+        <TextView
+            android:id="@+id/jenis_kelamin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@{Utils.fromHTML(String.format(@string/jenis_kelamin, vm.siswa.jenis_kelamin == 1 ? `Laki - Laki` : `Perempuan`))}"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/nisn"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/nisn"
+            app:layout_constraintTop_toBottomOf="@+id/nisn"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Jenis Kelamin" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

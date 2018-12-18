@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="Siswa">
-        <item>Adi</item>
-        <item>Budi</item>
-        <item>Caca</item>
+    <string-array name="kelas">
+        <item>Kelas 1</item>
+        <item>Kelas 2</item>
+        <item>Kelas 3</item>
+        <item>Kelas 4</item>
+        <item>Kelas 5</item>
     </string-array>
 </resources>
