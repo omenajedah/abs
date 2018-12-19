@@ -27,7 +27,7 @@ public class AbsensiViewModel extends BaseViewModel {
     public void onAdd(View v) {
         DialogAbsensiSiswaBinding siswaBinding = DialogAbsensiSiswaBinding.inflate(LayoutInflater.from(getContext()), null);
         CustomDialog dialog = CustomDialog.get(v.getContext())
-                .title("Tambah Kelas")
+                .title("Absen Siswa")
                 .addView(siswaBinding.getRoot())
                 .cancelable(true);
 
