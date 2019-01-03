@@ -39,6 +39,7 @@ public class HomeViewModel extends BaseViewModel {
     }
 
     public void onLogoutClicked(View v) {
+        getSessionHandler().clear();
         listener.onLogout();
     }
 

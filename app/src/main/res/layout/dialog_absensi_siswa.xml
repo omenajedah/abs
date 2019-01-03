@@ -49,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{vm.siswa.nisn}"
+                android:enabled="false"
                 android:hint="NISN" />
         </android.support.design.widget.TextInputLayout>
 
@@ -69,6 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{vm.siswa.nama_siswa}"
+                android:enabled="false"
                 android:hint="Nama Siswa" />
         </android.support.design.widget.TextInputLayout>
 
@@ -79,6 +81,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="8dp"
             android:text="Batal"
+            android:onClick="@{vm::onBatalClick}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/root_nama_kelas"
             app:layout_constraintTop_toBottomOf="@+id/root_status_absen"
@@ -90,6 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Simpan"
+            android:onClick="@{vm::onSimpanClick}"
             app:layout_constraintBottom_toBottomOf="@+id/button"
             app:layout_constraintEnd_toEndOf="@+id/root_nama_kelas"
             app:layout_constraintHorizontal_bias="1.0"
@@ -102,6 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="horizontal"
+            android:onCheckedChanged="@{vm::onAbsen}"
             app:layout_constraintEnd_toEndOf="@+id/root_nama_siswa"
             app:layout_constraintStart_toStartOf="@+id/root_nama_siswa"
             app:layout_constraintTop_toBottomOf="@+id/root_nama_siswa">

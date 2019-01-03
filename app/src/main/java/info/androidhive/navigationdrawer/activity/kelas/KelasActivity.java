@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +58,7 @@ public class KelasActivity extends BaseActivity<ActivityKelasBinding, KelasViewM
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         adapter = new KelasAdapter(kelasList);
+        adapter.setBaseRecyclerOnSuccessListener(() -> viewModel.refresh());
 
         getBinding().listData.setAdapter(adapter);
         getBinding().listData.setHasFixedSize(true);
@@ -66,12 +68,7 @@ public class KelasActivity extends BaseActivity<ActivityKelasBinding, KelasViewM
         getBinding().listData.setLayoutManager(layoutManager);
 //        getBinding().listData.addItemDecoration(new CustomDivider(this, V));
 
-        kelasList.add(Kelas.add("0", "Kelas 1"));
-        kelasList.add(Kelas.add("1", "Kelas 2"));
-        kelasList.add(Kelas.add("2", "Kelas 3"));
-        kelasList.add(Kelas.add("3", "Kelas 4"));
-        kelasList.add(Kelas.add("4", "Kelas 5"));
-        adapter.updateDataSet();
+        viewModel.refresh();
     }
 
     @Override
@@ -82,5 +79,18 @@ public class KelasActivity extends BaseActivity<ActivityKelasBinding, KelasViewM
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onRefresh(List<Kelas> kelas) {
+        this.kelasList.clear();
+        this.kelasList.addAll(kelas);
+        adapter.updateDataSet();
+    }
+
+    @Override
+    public void onError(Throwable throwable) {
+        throwable.printStackTrace();
+        Toast.makeText(this,"terjadi error", Toast.LENGTH_SHORT).show();
     }
 }

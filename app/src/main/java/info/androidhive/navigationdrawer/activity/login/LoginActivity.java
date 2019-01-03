@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.Toast;
 
 import info.androidhive.navigationdrawer.BR;
@@ -11,6 +12,7 @@ import info.androidhive.navigationdrawer.R;
 import info.androidhive.navigationdrawer.activity.home.HomeActivity;
 import info.androidhive.navigationdrawer.base.BaseActivity;
 import info.androidhive.navigationdrawer.databinding.ActivityLoginBinding;
+import info.androidhive.navigationdrawer.generated.callback.OnClickListener;
 
 
 /**
@@ -65,5 +67,13 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
             finish();
             return;
         }
+
+        getBinding().passwordEt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewModel.register();
+            }
+        });
+
     }
 }

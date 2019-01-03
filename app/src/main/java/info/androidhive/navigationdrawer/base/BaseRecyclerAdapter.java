@@ -22,6 +22,7 @@ import io.reactivex.schedulers.Schedulers;
 public abstract class BaseRecyclerAdapter<E> extends RecyclerView.Adapter<BaseViewHolder<?>> {
 
     private static final String TAG = BaseRecyclerAdapter.class.getSimpleName();
+    protected BaseRecyclerOnSuccessListener baseRecyclerOnSuccessListener;
 
     private Disposable disposable;
     protected final List<E> showList = new ArrayList<>();
@@ -32,6 +33,10 @@ public abstract class BaseRecyclerAdapter<E> extends RecyclerView.Adapter<BaseVi
         Log.d(TAG, "Instantiated");
         this.originalList = originalList;
         this.showList.addAll(this.originalList);
+    }
+
+    public void setBaseRecyclerOnSuccessListener(BaseRecyclerOnSuccessListener listener) {
+        this.baseRecyclerOnSuccessListener = listener;
     }
 
     @Override
@@ -110,4 +115,8 @@ public abstract class BaseRecyclerAdapter<E> extends RecyclerView.Adapter<BaseVi
 
 
     public abstract boolean onSearch(String filter, E e) throws Exception;
+
+    public interface BaseRecyclerOnSuccessListener {
+        void onSuccess();
+    }
 }

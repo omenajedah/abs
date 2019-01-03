@@ -13,7 +13,7 @@ public class AbsensiSiswa extends Siswa {
     public static final int STATUS_HADIR = 1;
     public static final int STATUS_IZIN = 2;
     public static final int STATUS_SAKIT = 3;
-    public static final int STATUS_ALPHA = -1;
+    public static final int STATUS_ALPHA = 4;
 
 
     private int absen_siswa;

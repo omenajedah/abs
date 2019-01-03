@@ -5,25 +5,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
-import info.androidhive.navigationdrawer.activity.kelas.DialogKelasViewModel;
+import com.rx2androidnetworking.Rx2AndroidNetworking;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import info.androidhive.navigationdrawer.base.BaseViewModel;
-import info.androidhive.navigationdrawer.databinding.DialogKelasBinding;
 import info.androidhive.navigationdrawer.databinding.DialogSiswaBinding;
+import info.androidhive.navigationdrawer.other.ConstantNetwork;
 import info.androidhive.navigationdrawer.other.CustomDialog;
 import info.androidhive.navigationdrawer.pojo.Kelas;
 import info.androidhive.navigationdrawer.pojo.Siswa;
-
-import static info.androidhive.navigationdrawer.activity.kelas.DialogKelasViewModel.AUTO_GENERATE;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by Firman on 12/19/2018.
  */
 public class SiswaViewModel extends BaseViewModel {
 
-    private final KelasListener listener;
-    public SiswaViewModel(Context context, KelasListener listener) {
+    private final SiswaListener listener;
+
+    public SiswaViewModel(Context context, SiswaListener listener) {
         super(context);
-        this.listener=listener;
+        this.listener = listener;
     }
 
     public void onAdd(View v) {
@@ -40,12 +49,12 @@ public class SiswaViewModel extends BaseViewModel {
 
             @Override
             public void onDelete() {
-                dialog.dismiss();
+                onBatal();
             }
 
             @Override
             public void onSimpanBerhasil() {
-                dialog.dismiss();
+                onBatal();
                 Toast.makeText(v.getContext(), "Sukses menyimpan.", Toast.LENGTH_SHORT).show();
             }
 
@@ -56,6 +65,7 @@ public class SiswaViewModel extends BaseViewModel {
 
             @Override
             public void onBatal() {
+                refresh();
                 dialog.dismiss();
             }
         });
@@ -66,7 +76,54 @@ public class SiswaViewModel extends BaseViewModel {
         dialog.show();
     }
 
-    public interface KelasListener {
+    public void refresh() {
+        getCompositeDisposable().clear();
+        getCompositeDisposable().add(
+                getSiswa().subscribe(Siswa -> {
+                    listener.onRefresh(Siswa);
+                }, throwable -> {
+                    listener.onError(throwable);
+                })
+        );
+
+    }
+
+    private Observable<List<Siswa>> getSiswa() {
+
+        return Rx2AndroidNetworking.post(ConstantNetwork.SISWA)
+                .build()
+                .getJSONObjectObservable()
+                .map(jsonObject -> {
+                    List<Siswa> Siswa = new ArrayList<>();
+
+                    JSONArray array = jsonObject.getJSONArray("DataRow");
+
+                    for (int i = 0; i < array.length(); i++) {
+                        JSONObject ITEM = array.getJSONObject(i);
+                        Siswa siswa = new Siswa();
+                        siswa.setNisn(ITEM.getString("nisn"));
+                        siswa.setNama_siswa(ITEM.getString("nama_siswa"));
+                        siswa.setJenis_kelamin(ITEM.getInt("jenis_kelamin"));
+                        siswa.setNisn(ITEM.getString("nisn"));
+
+                        Kelas kls = new Kelas();
+                        kls.setId_kelas(ITEM.getString("id_kelas"));
+                        kls.setNama_kelas(ITEM.getString("nama_kelas"));
+                        siswa.setKelas(kls);
+                        Siswa.add(siswa);
+                    }
+
+                    return Siswa;
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+
+    public interface SiswaListener {
+        void onRefresh(List<Siswa> siswa);
+
+        void onError(Throwable throwable);
 
     }
 }

@@ -46,4 +46,14 @@ public class Kelas extends BaseObservable {
         this.nama_kelas = nama_kelas;
         notifyPropertyChanged(BR.nama_kelas);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (!(obj instanceof Kelas))
+            return false;
+        Kelas kelas = (Kelas) obj;
+
+        return ((Kelas) obj).getId_kelas().equals(id_kelas);
+    }
 }

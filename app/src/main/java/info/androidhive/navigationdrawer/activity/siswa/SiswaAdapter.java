@@ -65,6 +65,8 @@ public class SiswaAdapter extends BaseRecyclerAdapter<Siswa> {
 
                     @Override
                     public void onSimpanBerhasil() {
+                        if (baseRecyclerOnSuccessListener != null)
+                            baseRecyclerOnSuccessListener.onSuccess();
                         dialog.dismiss();
                         Toast.makeText(v.getContext(), "Sukses menyimpan.", Toast.LENGTH_SHORT).show();
                     }

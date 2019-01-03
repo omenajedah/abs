@@ -13,6 +13,7 @@ import info.androidhive.navigationdrawer.base.BaseViewModel;
 import info.androidhive.navigationdrawer.other.ConstantNetwork;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -51,10 +52,6 @@ public class LoginViewModel extends BaseViewModel {
     }
 
     public void login() {
-        loginListener.onLoginSuccess();
-
-        if (true)
-            return;
         getCompositeDisposable().clear();
 
         getCompositeDisposable().add(

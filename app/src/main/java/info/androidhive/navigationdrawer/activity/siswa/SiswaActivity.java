@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +14,13 @@ import java.util.List;
 import info.androidhive.navigationdrawer.BR;
 import info.androidhive.navigationdrawer.R;
 import info.androidhive.navigationdrawer.base.BaseActivity;
-import info.androidhive.navigationdrawer.databinding.ActivityHomeBinding;
 import info.androidhive.navigationdrawer.databinding.ActivitySiswaBinding;
 import info.androidhive.navigationdrawer.other.CustomDivider;
 import info.androidhive.navigationdrawer.pojo.Kelas;
 import info.androidhive.navigationdrawer.pojo.Siswa;
 
 public class SiswaActivity extends BaseActivity<ActivitySiswaBinding, SiswaViewModel>
-    implements SiswaViewModel.KelasListener {
+    implements SiswaViewModel.SiswaListener {
 
     private SiswaViewModel viewModel;
     private List<Siswa> siswaList = new ArrayList<>();
@@ -55,19 +55,14 @@ public class SiswaActivity extends BaseActivity<ActivitySiswaBinding, SiswaViewM
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         adapter = new SiswaAdapter(siswaList);
+        adapter.setBaseRecyclerOnSuccessListener(() -> viewModel.refresh());
 
         getBinding().listData.setAdapter(adapter);
         getBinding().listData.setHasFixedSize(true);
         getBinding().listData.setItemAnimator(new DefaultItemAnimator());
         getBinding().listData.addItemDecoration(new CustomDivider(this, CustomDivider.VERTICAL_LIST));
 
-        siswaList.add(Siswa.add("00001", "Antono", 1, Kelas.add("0", "Kelas 1")));
-        siswaList.add(Siswa.add("00002", "Toni Subarjo", 1, Kelas.add("0", "Kelas 1")));
-        siswaList.add(Siswa.add("00003", "Ranti", 0, Kelas.add("0", "Kelas 1")));
-        siswaList.add(Siswa.add("00004", "Rina ", 0, Kelas.add("0", "Kelas 1")));
-        siswaList.add(Siswa.add("00005", "Tono ", 1, Kelas.add("0", "Kelas 1")));
-
-        adapter.updateDataSet();
+       viewModel.refresh();
     }
 
     @Override
@@ -78,5 +73,18 @@ public class SiswaActivity extends BaseActivity<ActivitySiswaBinding, SiswaViewM
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onRefresh(List<Siswa> siswa) {
+        this.siswaList.clear();
+        this.siswaList.addAll(siswa);
+        adapter.updateDataSet();
+    }
+
+    @Override
+    public void onError(Throwable throwable) {
+        throwable.printStackTrace();
+        Toast.makeText(this,"terjadi error", Toast.LENGTH_SHORT).show();
     }
 }

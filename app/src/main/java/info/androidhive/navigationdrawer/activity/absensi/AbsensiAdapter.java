@@ -68,6 +68,8 @@ public class AbsensiAdapter extends BaseRecyclerAdapter<AbsensiSiswa> {
                     @Override
                     public void onSimpanBerhasil() {
                         dialog.dismiss();
+                        if (baseRecyclerOnSuccessListener != null)
+                            baseRecyclerOnSuccessListener.onSuccess();
                         Toast.makeText(v.getContext(), "Sukses menyimpan.", Toast.LENGTH_SHORT).show();
                     }
 
