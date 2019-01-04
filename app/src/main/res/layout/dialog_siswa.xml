@@ -30,7 +30,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{vm.siswa.nisn}"
-                android:enabled="false"
+                android:afterTextChanged="@{vm::afterNisnChanged}"
+                android:enabled="true"
                 android:hint="NISN" />
         </android.support.design.widget.TextInputLayout>
 

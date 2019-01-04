@@ -114,7 +114,9 @@ public class DialogSiswaViewModel extends BaseViewModel {
         edited.setNama_siswa(nama.toString());
     }
 
-
+    public void afterNisnChanged(Editable nisn) {
+        edited.setNisn(nisn.toString());
+    }
 
     public void onSimpanClick(View v) {
         getCompositeDisposable().clear();
