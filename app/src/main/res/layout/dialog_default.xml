@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="info.androidhive.navigationdrawer.other.CustomDialog.DialogViewModel" />
+            type="com.thessa.absensi.other.CustomDialog.DialogViewModel" />
     </data>
 
     <LinearLayout

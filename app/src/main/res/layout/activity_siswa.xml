@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="info.androidhive.navigationdrawer.activity.siswa.SiswaViewModel" />
+            type="com.thessa.absensi.activity.siswa.SiswaViewModel" />
     </data>
 
     <android.support.design.widget.CoordinatorLayout

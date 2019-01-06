@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="info.androidhive.navigationdrawer.activity.register.RegisterViewModel" />
+            type="com.thessa.absensi.activity.register.RegisterViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout

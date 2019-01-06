@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="info.androidhive.navigationdrawer.other.Utils"/>
+        <import type="com.thessa.absensi.other.Utils"/>
         <variable
             name="vm"
-            type="info.androidhive.navigationdrawer.activity.siswa.ListSiswaViewModel" />
+            type="com.thessa.absensi.activity.siswa.ListSiswaViewModel" />
 
     </data>
 
@@ -21,11 +21,11 @@
         <TextView
             android:id="@+id/kelas_siswa"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="22dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@{Utils.fromHTML(String.format(@string/nama_siswa, vm.siswa.kelas.nama_kelas))}"
+            android:text="@{Utils.fromHTML(String.format(@string/kelas_siswa, vm.siswa.kelas.nama_kelas))}"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"

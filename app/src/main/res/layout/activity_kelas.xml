@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="info.androidhive.navigationdrawer.activity.kelas.KelasViewModel" />
+            type="com.thessa.absensi.activity.kelas.KelasViewModel" />
     </data>
 
     <android.support.design.widget.CoordinatorLayout

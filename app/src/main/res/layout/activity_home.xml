@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="info.androidhive.navigationdrawer.activity.home.HomeViewModel" />
+            type="com.thessa.absensi.activity.home.HomeViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout

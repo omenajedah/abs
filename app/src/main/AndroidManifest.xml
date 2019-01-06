@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="info.androidhive.navigationdrawer">
+    package="com.thessa.absensi">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".MyAplications"
+        android:name="com.thessa.absensi.MyAplications"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.login.LoginActivity"
+            android:name="com.thessa.absensi.activity.login.LoginActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop">
             <intent-filter>
@@ -22,34 +22,37 @@
         </activity>
 
         <activity
-            android:name=".activity.register.RegisterActivity"
+            android:name="com.thessa.absensi.activity.register.RegisterActivity"
             android:label="Register"
             android:launchMode="singleTop" />
 
         <activity
-            android:name=".activity.home.HomeActivity"
+            android:name="com.thessa.absensi.activity.home.HomeActivity"
             android:label="Home"
             android:launchMode="singleTop" />
 
         <activity
-            android:name=".activity.kelas.KelasActivity"
+            android:name="com.thessa.absensi.activity.kelas.KelasActivity"
             android:label="Kelas"
             android:launchMode="singleTop" />
 
         <activity
-            android:name=".activity.siswa.SiswaActivity"
+            android:name="com.thessa.absensi.activity.siswa.SiswaActivity"
             android:label="Siswa"
             android:launchMode="singleTop" />
 
         <activity
-            android:name=".activity.absensi.AbsensiActivity"
+            android:name="com.thessa.absensi.activity.absensi.AbsensiActivity"
             android:label="Absensi"
             android:launchMode="singleTop" />
 
         <activity
-            android:name=".activity.laporan.LaporanActivity"
+            android:name="com.thessa.absensi.activity.laporan.LaporanActivity"
             android:label="Laporan Absensi"
             android:launchMode="singleTop" />
+        <activity android:name=".activity.laporandetil.LaporanDetailActivity"
+            android:label="Laporan Absensi"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>

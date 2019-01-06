@@ -5,11 +5,11 @@
 
     <data>
 
-        <import type="info.androidhive.navigationdrawer.other.Utils"/>
+        <import type="com.thessa.absensi.other.Utils"/>
 
         <variable
             name="vm"
-            type="info.androidhive.navigationdrawer.activity.absensi.ListAbsensiViewModel" />
+            type="com.thessa.absensi.activity.absensi.ListAbsensiViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
