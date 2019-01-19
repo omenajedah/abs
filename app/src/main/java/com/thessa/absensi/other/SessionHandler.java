@@ -20,10 +20,11 @@ public class SessionHandler {
         this.preference = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
-    public void login(String username, String password, String fullname) {
+    public void login(String username, String password, String fullname, int user_type) {
         putString("user_name", username);
         putString("user_pass", password);
         putString("user_fullname", fullname);
+        put("user_type", user_type);
     }
 
     public boolean isLogin() {

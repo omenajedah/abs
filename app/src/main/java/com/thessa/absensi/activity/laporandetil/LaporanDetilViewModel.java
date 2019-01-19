@@ -9,9 +9,12 @@ import com.thessa.absensi.pojo.AbsensiSiswa;
 import com.thessa.absensi.pojo.AbsensiSiswaSummary;
 import com.thessa.absensi.pojo.Siswa;
 
+import org.json.JSONObject;
+
 import io.reactivex.Observable;
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -54,7 +57,7 @@ public class LaporanDetilViewModel extends BaseViewModel {
                     siswa.setTotal_hari_bulan(jsonObject.getInt("TOTAL_HARI_BULAN"));
                     siswa.setTotal_hari_absen(jsonObject.getInt("TOTAL_HARI_ABSEN"));
                     siswa.setTotal_absen_hadir(jsonObject.getInt("TOTAL_ABSEN_HADIR"));
-                    siswa.setTotal_absen_hadir(jsonObject.getInt("TOTAL_ABSEN_IZIN"));
+                    siswa.setTotal_absen_izin(jsonObject.getInt("TOTAL_ABSEN_IZIN"));
                     siswa.setTotal_absen_sakit(jsonObject.getInt("TOTAL_ABSEN_SAKIT"));
                     siswa.setTotal_absen_alpha(jsonObject.getInt("TOTAL_ABSEN_ALPHA"));
                     siswa.setTotal_persentase(jsonObject.getInt("PERSENTASE_KEHADIRAN"));

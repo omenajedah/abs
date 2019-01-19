@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import com.thessa.absensi.BR;
 import com.thessa.absensi.R;
+import com.thessa.absensi.activity.login.LoginActivity;
 import com.thessa.absensi.base.BaseActivity;
 import com.thessa.absensi.databinding.ActivityHomeBinding;
 
@@ -39,5 +40,6 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding, HomeViewMode
     @Override
     public void onLogout() {
         finish();
+        LoginActivity.startThisActivity(this);
     }
 }

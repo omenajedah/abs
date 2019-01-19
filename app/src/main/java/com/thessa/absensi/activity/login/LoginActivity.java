@@ -67,12 +67,5 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
             return;
         }
 
-        getBinding().passwordEt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewModel.register();
-            }
-        });
-
     }
 }

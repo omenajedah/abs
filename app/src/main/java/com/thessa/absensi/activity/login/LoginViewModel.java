@@ -78,7 +78,8 @@ public class LoginViewModel extends BaseViewModel {
                         JSONObject profile = jsonObject.getJSONObject("profile");
                         getSessionHandler().login(profile.optString("user_name"),
                                 profile.optString("user_pass"),
-                                profile.optString("user_fullname"));
+                                profile.optString("user_fullname"),
+                                profile.optInt("user_type"));
                     }
                     return jsonObject.optBoolean("success");
                 })

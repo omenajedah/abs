@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -23,8 +22,8 @@
             android:layout_marginRight="16dp"
             android:text="ABSENSI SISWA"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textSize="30sp"
             android:textColor="@color/colorAccent"
+            android:textSize="30sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +35,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
-            android:text="Selamat Datang, Thessa Mardiana"
+            android:text="@{`Selamat Datang, ` + vm.namaUser}"
             android:textColor="@android:color/black"
             android:textStyle="bold"
             android:typeface="monospace"
@@ -51,8 +50,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            android:text="Kelas"
+            android:enabled="@{vm.tipeUser == 1}"
             android:onClick="@{vm::onKelasClicked}"
+            android:text="Kelas"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/welcome_tv" />
@@ -62,8 +62,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Siswa"
+            android:enabled="@{vm.tipeUser == 1}"
             android:onClick="@{vm::onSiswaClicked}"
+            android:text="Siswa"
             app:layout_constraintEnd_toEndOf="@+id/btn_kelas"
             app:layout_constraintStart_toStartOf="@+id/btn_kelas"
             app:layout_constraintTop_toBottomOf="@+id/btn_kelas" />
@@ -73,8 +74,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Absensi"
+            android:enabled="@{vm.tipeUser == 1}"
             android:onClick="@{vm::onAbsensiClicked}"
+            android:text="Absensi"
             app:layout_constraintEnd_toEndOf="@+id/btn_siswa"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/btn_siswa"
@@ -85,8 +87,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Laporan Absensi"
             android:onClick="@{vm::onLaporanClicked}"
+            android:text="Laporan Absensi"
             app:layout_constraintEnd_toEndOf="@+id/btn_absensi"
             app:layout_constraintStart_toStartOf="@+id/btn_absensi"
             app:layout_constraintTop_toBottomOf="@+id/btn_absensi" />
@@ -97,8 +99,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
-            android:text="Logout"
             android:onClick="@{vm::onLogoutClicked}"
+            android:text="Logout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/btn_laporan"
             app:layout_constraintStart_toStartOf="@+id/btn_laporan"
